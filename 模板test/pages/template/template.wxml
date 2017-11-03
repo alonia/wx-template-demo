@@ -1,0 +1,54 @@
+<!--pages/template/template.wxml-->
+ <template name="guideDetail"> 
+    <!-- <text class='nameLabel'>hello world</text> -->
+    <view class="headerView" catchtap="showEvidenceTap">  
+            <image src="{{avatar}}" class="photo"></image>   
+        <view class="background">
+            <view class="topView">
+              <label class="nameLabel">{{name}}</label>
+              <label class="locLabel">{{location}}</label>
+            </view>
+            <view class="bottomView">
+              <image src="../../images/man_icon.png" class="iconImage" wx:if="{{gender==1}}"></image>
+              <image src="../../images/woman_icon.png" class="iconImage" wx:if="{{gender==0}}"></image>
+              <image src="../../images/evidence_english.png" class="iconImage" wx:if="{{verified_guide[0]==1}}"></image>
+              <image src="../../images/evidence_id.png" class="iconImage" wx:if="{{verified_guide[1]==1}}"></image>
+              <image src="../../images/evidence_chinese.png" class="iconImage" wx:if="{{verified_guide[2]==1}}"></image>
+              <image src="../../images/evidence_leader.png" class="iconImage" wx:if="{{verified_guide[3]==1}}"></image>
+              <image src="../../images/evidence_yue.png" class="iconImage" wx:if="{{verified_guide[4]==1}}"></image>
+            </view> 
+        </view> 
+    </view>  
+    <view class="lineView"></view>  
+</template> 
+<template name="maskGuideDetailView">
+<view class="evidenceMaskView" catchtap="hideModal" ></view>
+  <view class="textBgView"  catchtap="hideModal" >
+      <text class="evidenceTitleText">所持证件</text> 
+      <view class="evidenceListBgView" wx:if="{{verified_guide[0]==1}}">
+          <image src="../../images/evidence_id.png" class="evidenceImage"></image>
+          <text class="evidenceText">身份证</text>
+          <image src="../../images/pay_checkImage_selected.png" class="evidenceCheckImage"></image>
+       </view>
+       <view class="evidenceListBgView" wx:if="{{verified_guide[1]==1}}">
+          <image src="../../images/evidence_chinese.png" class="evidenceImage"></image>
+          <text class="evidenceText">国导证</text>
+          <image src="../../images/pay_checkImage_selected.png" class="evidenceCheckImage"></image>
+       </view>
+       <view class="evidenceListBgView" wx:if="{{verified_guide[2]==1}}">
+          <image src="../../images/evidence_english.png" class="evidenceImage"></image>
+          <text class="evidenceText">英导证</text>
+          <image src="../../images/pay_checkImage_selected.png" class="evidenceCheckImage"></image>
+       </view>
+       <view class="evidenceListBgView" wx:if="{{verified_guide[3]==1}}">
+          <image src="../../images/evidence_yue.png" class="evidenceImage"></image>
+          <text class="evidenceText">粤导证</text>
+          <image src="../../images/pay_checkImage_selected.png" class="evidenceCheckImage"></image>
+       </view>
+       <view class="evidenceListBgView" wx:if="{{verified_guide[4]==1}}">
+          <image src="../../images/evidence_leader.png" class="evidenceImage"></image>
+          <text class="evidenceText">领队证</text>
+          <image src="../../images/pay_checkImage_selected.png" class="evidenceCheckImage"></image>
+       </view>
+  </view>  
+</template>

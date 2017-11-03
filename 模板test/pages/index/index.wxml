@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<import src="../template/template.wxml"/>
+<template is="guideDetail"  data="{{...guideInfo}}" ></template>
+<template is="maskGuideDetailView"  data="{{...guideInfo}}" wx:if="{{showModalStatus === true}}"></template>
